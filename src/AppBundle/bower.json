@@ -1,0 +1,22 @@
+{
+  "name": "l2w",
+  "homepage": "https://github.com/filip106/l2w",
+  "authors": [
+    "filip <djordjevic.filip994@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "isotope": "isotope-layout#^3.0.4"
+  }
+}

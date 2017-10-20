@@ -2,8 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    <title>{% block title %}L2W!{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     {% stylesheets
     '@AppBundle/Resources/public/bootstrap/dist/css/bootstrap-theme.min.css'
@@ -15,6 +14,7 @@
     '@AppBundle/Resources/public/bootstrap/dist/js/bootstrap.min.js' %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
+    {% block stylesheets %}{% endblock %}
 </head>
 <body>
 {% block body %}{% endblock %}

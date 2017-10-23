@@ -50,6 +50,7 @@ body {
 }
 
 #menu span {
+    letter-spacing: 3px;
     display: table-cell;
     color: #fff;
     text-align: center;

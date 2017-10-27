@@ -49,7 +49,7 @@ body {
     z-index: 99;
 }
 
-#menu span {
+#menu div {
     letter-spacing: 3px;
     display: table-cell;
     color: #fff;
@@ -57,9 +57,10 @@ body {
     margin: auto;
     padding: 16px 15px;
     font-size: 20px;
+    width: 180px;
 }
 
-#menu span:hover {
+#menu div:hover {
     background-color: #d84234;
     cursor: pointer;
 }

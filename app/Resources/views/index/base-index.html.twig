@@ -14,7 +14,7 @@
 
 {% block javascripts %}
     {% javascripts
-    '@AppBundle/Resources/assets/index/js/main.js'
+    '@AppBundle/Resources/public/assets/index/js/main.js'
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -22,7 +22,7 @@
 
 {% block stylesheets %}
     {% stylesheets
-    '@AppBundle/Resources/assets/index/css/style.css'
+    'bundles/app/assets/index/css/style.css'
     filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}

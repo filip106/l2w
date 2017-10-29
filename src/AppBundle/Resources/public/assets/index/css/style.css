@@ -35,7 +35,7 @@ body {
     background: #fff;
     width: 100%;
     position: relative;
-    margin: 0 auto 20px auto;
+    /*margin: 0 auto 20px auto;*/
     padding: 0;
     height: 60px;
 }

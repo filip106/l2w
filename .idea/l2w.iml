@@ -138,5 +138,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="swiper.jquery" level="application" />
   </component>
 </module>

@@ -17,6 +17,7 @@
 {% block javascripts %}
     {% javascripts
     '@AppBundle/Resources/public/assets/index/js/main.js'
+    '@AppBundle/Resources/public/vendor/swiper/dist/js/swiper.js'
     '@AppBundle/Resources/public/assets/index/js/slider.js'
     %}
     <script src="{{ asset_url }}"></script>
@@ -25,59 +26,10 @@
 
 {% block stylesheets %}
     {% stylesheets
+    'bundles/app/vendor/ress/dist/ress.min.css'
     'bundles/app/assets/index/css/style.css'
     'bundles/app/assets/index/css/slider.css'
     filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
-    <style>
-        .slide:nth-child(1) {
-            left: 0;
-        }
-        .slide:nth-child(1) .slide__bg {
-            left: 0;
-            background-image: url("{{ asset('bundles/app/assets/index/img/slides/PHP7-ELEPHANT.png') }}");
-        }
-        .slide:nth-child(1) .slide__overlay-path {
-            fill: #c579a5;
-        }
-        @media (max-width: 991px) {
-            .slide:nth-child(1) .slide__text {
-                background-color: rgba(233, 156, 126, 0.8);
-            }
-        }
-
-        .slide:nth-child(2) {
-            left: 100%;
-        }
-        .slide:nth-child(2) .slide__bg {
-            left: -50%;
-            background-image: url("{{ asset('bundles/app/assets/index/img/slides/JavascriptSlider.png') }}");
-        }
-        .slide:nth-child(2) .slide__overlay-path {
-            fill: #7abfcc;
-        }
-        @media (max-width: 991px) {
-            .slide:nth-child(2) .slide__text {
-                background-color: rgba(225, 204, 174, 0.8);
-            }
-        }
-
-
-        .slide:nth-child(3) {
-            left: 200%;
-        }
-        .slide:nth-child(3) .slide__bg {
-            left: -100%;
-            background-image: url("{{ asset('bundles/app/assets/index/img/slides/javaslider.jpg') }}");
-        }
-        .slide:nth-child(3) .slide__overlay-path {
-            fill: #adc5cd;
-        }
-        @media (max-width: 991px) {
-            .slide:nth-child(3) .slide__text {
-                background-color: rgba(173, 197, 205, 0.8);
-            }
-        }
-    </style>
 {% endblock %}

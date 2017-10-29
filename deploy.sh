@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-php bin/console cache:clear --no-warmup --env=dev
-#php bin/console cache:clear --no-warmup --env=prod
-
-php bin/console assetic:dump --env=dev --no-debug
-#php bin/console assetic:dump --env=prod --no-debug
+echo "deploy started";
+php bin/console cache:clear
+php bin/console assets:install
+php bin/console assetic:dump
+echo "deploy finished";

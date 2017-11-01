@@ -124,8 +124,10 @@ body {
     right: 35px;
     z-index: 90;
     cursor: pointer;
-    border-radius: 1px;
     opacity: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     -webkit-transform: translateZ(0);
     transition: all .6s
 }

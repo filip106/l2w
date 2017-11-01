@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>L2W Backend</title>
+
+    {% stylesheets
+    'bundles/app/vendor/bootstrap/dist/css/bootstrap.css'
+    'bundles/app/vendor/font-awesome/css/font-awesome.css'
+    'bundles/app/assets/index/css/backend-style.css'
+    filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+    {% javascripts
+    '@AppBundle/Resources/public/vendor/jquery/dist/jquery.min.js'
+    '@AppBundle/Resources/public/vendor/bootstrap/dist/js/bootstrap.min.js'
+    '@AppBundle/Resources/public/assets/index/js/backend-main.js'%}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body class="nav-md">
+
+<div class="container body">
+    <div class="main_container">
+        {% include 'AppBundle:backend:backend-menu.html.twig' %}
+        {% include 'AppBundle:backend:backend-header.html.twig' %}
+        {% block body %}{% endblock %}
+
+        {% include 'AppBundle:backend:backend-footer.html.twig' %}
+        {% block javascripts %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>

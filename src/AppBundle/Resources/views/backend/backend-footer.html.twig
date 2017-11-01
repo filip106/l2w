@@ -1,0 +1,42 @@
+<footer>
+    <div class="pull-right">
+        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+    </div>
+    <div class="clearfix"></div>
+</footer>
+
+<!--<script src="<c:url value='/resources/js/custom.js' />"></script>-->
+
+<script>
+    function pNotifyShowNotification(title, text, type) {
+        new PNotify({
+            title: title,
+            type: type ? type : "info",
+            text: text,
+            nonblock: {
+                nonblock: true
+            },
+            styling: 'bootstrap3'
+        });
+    }
+
+    function sendAuthorizeAjax(route, data, method, successFunction, ctx) {
+        $.ajax({
+            url: route,
+            method: method,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(header, token);
+            },
+            xhrFields: {withCredentials: true},
+            async: true,
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            dataType: "json"
+        }).then(function (data, textStatus, xhr) {
+            if (successFunction !== null) {
+                successFunction(ctx, data, xhr.status);
+            }
+            return data;
+        })
+    }
+</script>

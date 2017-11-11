@@ -1,13 +1,59 @@
-{% extends 'index/base-index.html.twig' %}
+{% extends '@App/base/base-index.html.twig' %}
 
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div id="content" style="height: 2000px; margin-top: 10px;">
-                    <h1>EEEEEEEEEEEEEEE</h1>
+                <div id="content">
+                    <div class="home-section">
+                        <div class="home-title-header">
+                            <h1>Picked Languages</h1>
+                            <a href="{{ path('languages_frontend') }}" class="home-more-tutorials">
+                                <span class="bonus-text">All Languages <i class="fa fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                        <div class="picked-grid picked-languages">
+                            {% include '@App/picked-index.html.twig' %}
+                        </div>
+                    </div>
+
+                    <div class="home-section">
+                        <div class="home-title-header">
+                            <h1>Picked Tutorials</h1>
+                            <a href="#" class="home-more-tutorials">
+                                <span class="bonus-text">All Tutorials <i class="fa fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                        <div class="picked-grid picked-tutorials">
+                            {% include '@App/rotate-index.hml.twig' %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <section class="home-image-section">
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="content">
+                    <div class="home-section" style="margin: 0">
+                        <div class="home-title-header">
+                            <h1>Most Active Users</h1>
+                            <a href="#" class="home-more-tutorials">
+                                <span class="bonus-text">All Languages <i class="fa fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                        <div class="picked-grid picked-languages">
+                            {% include '@App/team-index.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

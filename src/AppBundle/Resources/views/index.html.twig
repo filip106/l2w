@@ -12,8 +12,13 @@
                                 <span class="bonus-text">All Languages <i class="fa fa-arrow-right"></i></span>
                             </a>
                         </div>
+                        {% set pickedLanguages = get_featured_languages() %}
                         <div class="picked-grid picked-languages">
-                            {% include '@App/picked-index.html.twig' %}
+                            <div class="client-wrap opacity-focus">
+                                {% for pickedLanguage in pickedLanguages %}
+                                    {% include '@App/picked-language-template.html.twig' %}
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
 
@@ -24,9 +29,20 @@
                                 <span class="bonus-text">All Tutorials <i class="fa fa-arrow-right"></i></span>
                             </a>
                         </div>
+                        {% set pickedTutorials = get_featured_tutorials() %}
                         <div class="picked-grid picked-tutorials">
-                            {% include '@App/rotate-index.hml.twig' %}
+                            <div class="container">
+                                <div class="row">
+                                    {% for tutorial in pickedTutorials %}
+                                        {% include '@App/picked-tutorials-template.html.twig' %}
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </div>
+
+                        {#<div class="picked-grid picked-tutorials">#}
+                            {#{% include '@App/rotate-index.hml.twig' %}#}
+                        {#</div>#}
                     </div>
                 </div>
             </div>

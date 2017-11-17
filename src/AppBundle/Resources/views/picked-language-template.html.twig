@@ -1,0 +1,24 @@
+{# @var pickedLanguage \AppBundle\Entity\Language #}
+{# @var framework \AppBundle\Entity\Framework #}
+
+<div class="client">
+    <div class="client-more-less"></div>
+    <div class="client-meta">
+        <div class="client-close"></div>
+        <ul class="project-list">
+            <hr class="bar">
+            <h4 class="client-title">{{ pickedLanguage.title }}</h4>
+            {% for framework in pickedLanguage.frameworks %}
+                <li>{{ framework.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="overflow-wrapper">
+        {% for framework in pickedLanguage.frameworks %}
+            <img data-src="{{ framework.baseImageUrl }}">
+        {% endfor %}
+    </div>
+
+    <img class="client-logo smaller" src="{{ pickedLanguage.baseImageUrl }}">
+</div>

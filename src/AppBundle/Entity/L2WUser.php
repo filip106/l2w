@@ -8,8 +8,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Class L2WUser
  * @package AppBundle\Entity
- * @ORM\Entity
- * @ORM\Table(name="l2w_user")
  */
 class L2WUser
 {

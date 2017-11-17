@@ -21,3 +21,5 @@
 /web/images/*
 /web/Resources/*
 /src/AppBundle/Resources/public/vendor/*
+/html-bkp/*
+.idea/*

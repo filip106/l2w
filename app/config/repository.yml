@@ -1,0 +1,9 @@
+services:
+
+    AppBundle\Repository\LanguageRepository:
+        factory: 'doctrine.orm.entity_manager:getRepository'
+        arguments: ['AppBundle\Entity\Language']
+
+    AppBundle\Repository\TutorialRepository:
+        factory: 'doctrine.orm.entity_manager:getRepository'
+        arguments: ['AppBundle\Entity\Tutorial']

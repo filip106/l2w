@@ -1,3 +1,17 @@
+/** Navigation logic */
+$('.navigation-dropdown').on('click', function () {
+    if ($(this).hasClass('navigation-dropdown-active')) {
+        $(this).removeClass('navigation-dropdown-active');
+        $(this).find('.navigation-dropdown-content').removeClass('show-dropdown');
+    } else {
+        var allNavigationLinks = $('.navigation-dropdown');
+        allNavigationLinks.removeClass('navigation-dropdown-active');
+        allNavigationLinks.find('.navigation-dropdown-content').removeClass('show-dropdown');
+        $(this).addClass('navigation-dropdown-active');
+        $(this).find('.navigation-dropdown-content').addClass('show-dropdown');
+    }
+});
+
 $(function() {
     var top = $('#menu').offset().top - parseFloat($('#menu').css('marginTop').replace(/auto/, 0));
     var footTop = $('#footer').offset().top - parseFloat($('#footer').css('marginTop').replace(/auto/, 0));
@@ -99,3 +113,17 @@ $(function() {
         })
     })
 }).call(this);
+
+$(document).ready(function () {
+    $('[rel="tooltip"]').tooltip();
+});
+
+function rotateCard(btn) {
+    var $card = $(btn).closest('.card-container');
+    console.log($card);
+    if ($card.hasClass('hover')) {
+        $card.removeClass('hover');
+    } else {
+        $card.addClass('hover');
+    }
+}

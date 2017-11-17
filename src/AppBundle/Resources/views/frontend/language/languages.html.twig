@@ -1,6 +1,121 @@
 {% extends "@App/base/base-frontend.html.twig" %}
 
 {% block content %}
-<h1>Test</h1>
-    <a href="{{ path('homepage') }}">Idi kuci</a>
+    <img src="{{ asset('bundles/app/assets/index/img/MostPopularLanguages.png') }}" alt="" width="100%">
+    <div class="container" style="height: 1000px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="home-section">
+                    <div class="home-title-header">
+                        <h1>All Available Languages</h1>
+                    </div>
+                    <div class="all-available-languages-holder">
+                        <div id="language-card-article">
+                            {% include '@App/frontend/language/language-component.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script>
+        var worksgrid = $('#works-grid');
+        var filters = $('#filters');
+
+        $(document).ready(function () {
+            var selector = '*';
+            worksgrid.isotope({
+                filter: selector
+            });
+        });
+
+        var worksgrid_mode;
+        if (worksgrid.hasClass('works-grid-masonry')) {
+            worksgrid_mode = 'masonry';
+        } else {
+            worksgrid_mode = 'packery';
+        }
+
+        $('a', filters).on('click', function() {
+            var selector = $(this).attr('data-filter');
+
+            $('.current', filters).removeClass('current');
+            $(this).addClass('current');
+
+            worksgrid.isotope({
+                filter: selector
+            });
+
+            return false;
+        });
+
+        $(window).on('resize', function() {
+
+            var windowWidth    = Math.max($(window).width(), window.innerWidth),
+                itemWidht      = $('.grid-sizer').width(),
+                itemHeight     = Math.floor(itemWidht * 0.95),
+                itemTallHeight = itemHeight * 2;
+
+            if (windowWidth > 500) {
+                $('.work-item', worksgrid).each(function() {
+                    if ($(this).hasClass('tall')) {
+                        $(this).css({
+                            height : itemTallHeight
+                        });
+                    } else if ($(this).hasClass('wide')) {
+                        $(this).css({
+                            height : itemHeight
+                        });
+                    } else if ($(this).hasClass('wide-tall')) {
+                        $(this).css({
+                            height : itemTallHeight
+                        });
+                    } else {
+                        $(this).css({
+                            height : itemHeight
+                        });
+                    }
+                });
+            } else {
+                $('.work-item', worksgrid).each(function() {
+                    if ($(this).hasClass('tall')) {
+                        $(this).css({
+                            height : itemTallHeight
+                        });
+                    } else if ($(this).hasClass('wide')) {
+                        $(this).css({
+                            height : itemHeight / 2
+                        });
+                    } else if ($(this).hasClass('wide-tall')) {
+                        $(this).css({
+                            height : itemHeight
+                        });
+                    } else {
+                        $(this).css({
+                            height : itemHeight
+                        });
+                    }
+                });
+            }
+
+            worksgrid.imagesLoaded(function() {
+                worksgrid.isotope({
+                    layoutMode: worksgrid_mode,
+                    itemSelector: '.work-item',
+                    transitionDuration: '0.3s',
+                    packery: {
+                        columnWidth: '.grid-sizer',
+                    },
+                });
+            });
+
+        }).resize();
+    </script>
+
 {% endblock %}

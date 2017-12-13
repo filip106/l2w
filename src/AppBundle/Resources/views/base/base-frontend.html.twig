@@ -31,7 +31,9 @@
             <div class="navigation-dropdown">
                 L2W BLOG
                 <div class="navigation-dropdown-content">
-                    <a href="#">Link 41</a>
+                    <a href="{{ path('homepage') }}">Homepage</a>
+                    <a href="{{ path('languages_frontend') }}">All Languages</a>
+                    <a href="{{ path('all_tutorials_page') }}">All Tutorials</a>
                 </div>
             </div>
         </div>
@@ -82,7 +84,11 @@
     {% javascripts
     '@AppBundle/Resources/public/assets/index/js/main.js'
     '@AppBundle/Resources/public/vendor/swiper/dist/js/swiper.js'
-    'bundles/app/vendor/isotope/dist/isotope.pkgd.js' %}
+    'bundles/app/vendor/imagesloaded/imagesloaded.pkgd.js'
+    'bundles/app/vendor/isotope/dist/isotope.pkgd.js'
+    'bundles/app/vendor/isotope-packery/packery-mode.pkgd.js'
+    'bundles/app/vendor/animejs/anime.js'
+    'bundles/app/assets/index/js/tutorials-all.js' %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 
@@ -94,6 +100,9 @@
     'bundles/app/assets/index/css/style.css'
     'bundles/app/assets/index/css/slider.css'
     'bundles/app/assets/index/css/cards.css'
+    'bundles/app/assets/index/css/languages.css'
+    'bundles/app/assets/index/css/tutorials-all.css'
+    'bundles/app/assets/index/css/pater.css'
     filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}

@@ -39,10 +39,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        {#<div class="picked-grid picked-tutorials">#}
-                            {#{% include '@App/rotate-index.hml.twig' %}#}
-                        {#</div>#}
                     </div>
                 </div>
             </div>
@@ -63,8 +59,14 @@
                                 <span class="bonus-text">All Languages <i class="fa fa-arrow-right"></i></span>
                             </a>
                         </div>
+
+                        {% set pickedUsers = get_featured_users() %}
                         <div class="picked-grid picked-languages">
-                            {% include '@App/team-index.html.twig' %}
+                            <div class="at-grid" data-column="3">
+                                {% for appUser in pickedUsers %}
+                                    {% include '@App/picked-users-template.html.twig' %}
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 {% extends "@App/base/base-frontend.html.twig" %}
 
 {% block content %}
-    <img src="{{ asset('bundles/app/assets/index/img/MostPopularLanguages.png') }}" alt="" width="100%">
+    {#<img src="{{ asset('bundles/app/assets/index/img/MostPopularLanguages.png') }}" alt="" width="100%">#}
     <div class="container" style="height: 1000px">
         <div class="row">
             <div class="col-md-12">
@@ -11,7 +11,7 @@
                     </div>
                     <div class="all-available-languages-holder">
                         <div id="language-card-article">
-                            {% include '@App/frontend/language/language-component.html.twig' %}
+                            {% include '@App/frontend/language/all-available-languages/language-component.html.twig' %}
                         </div>
                     </div>
                 </div>
@@ -110,8 +110,8 @@
                     itemSelector: '.work-item',
                     transitionDuration: '0.3s',
                     packery: {
-                        columnWidth: '.grid-sizer',
-                    },
+                        columnWidth: '.grid-sizer'
+                    }
                 });
             });
 

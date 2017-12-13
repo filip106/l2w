@@ -7,3 +7,7 @@ services:
     AppBundle\Repository\TutorialRepository:
         factory: 'doctrine.orm.entity_manager:getRepository'
         arguments: ['AppBundle\Entity\Tutorial']
+
+    AppBundle\Repository\UserRepository:
+        factory: 'doctrine.orm.entity_manager:getRepository'
+        arguments: ['AppBundle\Entity\L2WUser']

@@ -20,6 +20,6 @@ class LanguageRoutesController extends Controller
      */
     public function indexAction(Request $request, $slug)
     {
-        return $this->render('@App/frontend/language/languages.html.twig', array('$slug' => $slug));
+        return $this->render('@App/frontend/language/all-available-languages/languages.html.twig', array('$slug' => $slug));
     }
 }

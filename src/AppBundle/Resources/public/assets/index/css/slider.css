@@ -389,7 +389,10 @@ button.swiper-pagination-bullet {
 .swiper-container-vertical
 > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 5px 0;
-    display: block;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .swiper-container-horizontal
 > .swiper-pagination-bullets .swiper-pagination-bullet {

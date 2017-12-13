@@ -1,0 +1,7 @@
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\L2WUser
+    from_email:
+        address: djordjevic.filip994@gmail.com
+        sender_name: L2W
